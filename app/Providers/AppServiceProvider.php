@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Src\CustomerManagement\Customers\Domain\CustomerRepository;
+use Src\CustomerManagement\Customers\Infrastructure\Persistence\Eloquent\EloquentCustomerRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        $this->app->bind(CustomerRepository::class, EloquentCustomerRepository::class);
     }
 
     /**
