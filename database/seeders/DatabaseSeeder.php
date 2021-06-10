@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use Database\Factories\CustomerFactory;
 use Illuminate\Database\Seeder;
+use Src\CustomerManagement\Customers\Domain\Customer;
+use Src\CustomerManagement\Customers\Infrastructure\Persistence\Eloquent\EloquentCustomerModel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        EloquentCustomerModel::factory()
+            ->count(1000)
+            ->create();
     }
 }
