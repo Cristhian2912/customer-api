@@ -22,7 +22,7 @@ class UpdateCustomerValidator extends DomainValidator
             'firstName' => ['required', 'max:50'],
             'lastName' => ['required', 'max:50'],
             'email' => ['required', 'email', 'max:50'],
-            'phoneNumber' => ['required', 'max:9']
+            'phoneNumber' => ['required', 'max:15']
         ]);
 
         if($validator->fails()){
