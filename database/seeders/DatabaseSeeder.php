@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         EloquentCustomerModel::factory()
-            ->count(100)
+            ->count(10000)
             ->create();
     }
 }
